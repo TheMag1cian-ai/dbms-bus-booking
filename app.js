@@ -693,7 +693,7 @@ app.post('/book', function(req, res) {
 	bus_code = find(source, destination);
 	bus_code = bus_code + date;
 
-	var data = `INSERT INTO passanger VALUES ('${name}', '${date}', '${source}', '${destination}', '${bus_code}', '${rem}', '${new Date().toLocaleTimeString().replace(' ', '')}')`;
+	var data = `INSERT INTO passanger VALUES ('${name}', '${date}', '${source}', '${destination}', '${bus_code}', '${rem}', '${new Date().toLocaleTimeString().replace(' ', '')+new Date().toLocaleDateString().replace(' ', '')}')`;
 	var query = db.query(data, function(err, result) {
 		if(err) {
 			throw err
